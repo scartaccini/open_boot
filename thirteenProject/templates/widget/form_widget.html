@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .input {
+            background-color:green;
+        }
+
+        .email {
+            background-color:red;
+        }
+
+        .msg {
+            background-color:grey;
+        }
+
+        .btn_enviar {
+            background-color:yellow;
+        }
+    </style>
+</head>
+<body>
+    <form>
+       
+        {{form_contacto.as_p}}
+      
+        <input type="submit" value="Enviar" class="btn_enviar">
+    </form>
+    
+</body>
+</html>

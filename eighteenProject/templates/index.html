@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block 'titulo' %} INICIO {% endblock %}
+{% block 'contenido' %} <h1>INICIO</h1>
+{% load static %}
+<div class="index-iconos">
+   <a href="{% url 'tareas_index' %}"><img src="{% static './imgs/tarea.png' %}" alt="Tareas" ></a>
+   <a href="{% url 'agenda_index' %}"><img src="{% static './imgs/agenda.png' %}" alt="Agenda" ></a>
+</div>
+{% endblock %}

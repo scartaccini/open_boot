@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block 'titulo' %} CONTACTOS {% endblock %}
+{% block 'contenido' %}
+<span>DATOS : </span>
+<span class="span-links">
+<a href="{% url 'agenda_index' %}"> Volver</a>    
+</span>
+<ul class="lista">
+<li><b>NOMBRE: </b><b>{{form.nombre|upper}}</b></li>
+<li><b>APELLIDO: </b><b>{{form.apellido|upper}}</b></li>
+<li><b>TELÉFONO: </b><b>{{form.tel}}</b></li>
+<li><b>CELULAR: </b><b>{{form.cel}}</b></li>
+<li><b>EMAIL: </b><b>{{form.email}}</b></li>
+<li><b>COMPAÑIA: </b><b>{{form.compania|upper}}</b></li>
+<li><b>FECHA: </b><b>{{form.fecha}}</b></li>
+<li><b>NOTAS: </b><b>{{form.notas|upper}}</b></li>
+</ul>
+{% endblock %}

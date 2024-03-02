@@ -1,0 +1,192 @@
+:root {
+--color-primary:#165;
+--color-secondary:#989;
+--color-text:#666;
+--font-main:Roboto-Regular;
+--font-text:pear;
+}
+
+/* Main settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--color-text);
+}
+
+@font-face {
+    font-family: pear;
+    src: url('../fonts/pear.otf');
+}
+
+@font-face {
+    font-family: Roboto-Regular;
+    src: url('../fonts/Roboto-Regular.ttf');
+}
+
+/*Layaour settings */
+h1,h2,h3,h4,h5,h6 {
+    font-family: var(--font-main);
+}
+/* menu */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+    background-color: var(--color-primary);
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    width: 90vw
+    justify-content: center;
+    align-items: center;
+}
+
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: var(--font-main);
+    padding: 10px;
+}
+
+/* Change the link color to #111 (black) on hover */
+nav ul li a:hover {
+    background-color: #111;
+}
+nav ul li {
+    float: left;
+}
+
+/* */
+main {
+    display: flex;
+    width: auto;
+    height: auto;
+    margin: 50px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lista{
+    display: flex;
+    flex-direction: column;
+   
+    border: 1px solid var(--color-secondary);
+    width: 50%;
+    list-style-type: none;
+}
+
+.lista li {
+    padding: 10px;
+    border-bottom: 5px solid var(--color-primary);
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+}
+
+.btn {
+    padding: 3px 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn_ver {
+   background-color: #165;
+   color: white;
+}
+
+.btn_ver:hover {
+    background-color: white;
+    color: #165;
+ }
+
+.btn_borrar {
+    background-color: rgb(243, 16, 16);
+    color: white;
+ }
+
+ .btn_borrar:hover {
+    background-color: white;
+    color:  rgb(243, 16, 16);
+ }
+
+ .btn_editar {
+    background-color: rgb(110, 109, 197);
+    color: white;
+ }
+
+ .btn_editar:hover {
+    background-color: white;
+    color:  rgb(110, 109, 197);
+ }
+
+ .search-bar {
+    margin: 20px;
+    padding: 5px;
+ }
+
+ .btn-search {
+   
+    background-color: #233;
+    color: white;
+ }
+
+ .span-links {
+    display: flex;
+    justify-content: flex-start;
+    
+    margin: 10px;
+    width: 50%;
+ }
+
+ .span-links a {
+   padding-right: 50px;
+   text-decoration: none;
+   background-color:#067;
+   color: white
+ }
+
+ .span-links a:hover {
+    background-color: white;
+    color:#067;
+  }
+
+.btn-guardar {
+    width: 100%;
+    background-color: #076;
+    color: white;
+    cursor: pointer;
+ }
+
+ .btn-guardar:hover {
+   
+    background-color: white;
+    color: #076;
+ }
+
+ .messages {
+    width: 100%;
+    background-color: #099;
+    color: white;
+  
+ }
+
+ .index-iconos {
+    display: flex;
+    cursor: pointer;
+    justify-content: flex-start;
+    align-items: center;
+      
+ }

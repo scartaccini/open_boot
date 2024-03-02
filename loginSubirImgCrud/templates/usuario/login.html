@@ -1,0 +1,17 @@
+{% extends 'base/base.html' %}
+{% block title %}
+LOGIN
+{% endblock %}
+{% block contenido %}
+<form method="post">
+{% csrf_token %}
+<table>
+{{ form.as_table }}
+</table>
+<input class="btn_login" type="submit" value="Ingresar">
+</form>
+<a href="#">Olvidé mi contraseña</a>
+{% endblock %}
+	
+
+

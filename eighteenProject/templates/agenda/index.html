@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block 'titulo' %} AGENDA {% endblock %}
+{% block 'contenido' %} <span>INDEX AGENDA</span>
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% include './letras.html' %}
+
+<form action="{% url 'agenda_index' %}" method="GET">
+    <input type="text" name="search" class="search-bar" placeholder="Buscar contacto ...">
+    <input type="submit" value="Buscar" class="btn btn-search">
+</form>
+<span class="span-links">
+    <a href="{% url 'agenda_index' %}"> Ver todos</a>
+    <a href="{% url 'crear_contacto' %}"> Agregar contacto</a>
+</span>
+<ul class="lista">
+{% for f in form %}
+<li>
+    {{f}}
+    <span> 
+        <a href="{% url 'eliminar_contacto' id=f.id %}" class="btn btn_borrar"> BORRAR</a>
+        <a href="{% url 'editar_contacto' id=f.id %}" class="btn btn_editar"> EDITAR</a>
+        <a href="{% url 'detalle_contacto' id=f.id %}" class="btn btn_ver"> VER</a> 
+    </span>
+</li>
+{% endfor %} 
+</ul>
+{% endblock %}

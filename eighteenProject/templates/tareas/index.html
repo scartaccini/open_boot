@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block 'titulo' %} TAREAS {% endblock %}
+{% block 'contenido' %} <span>INDEX TAREAS</span>
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+
+{% endif %}
+<form action="" method="GET">
+    <input type="text" name="search" class="search-bar" placeholder="Buscar tarea ...">
+    <input type="submit" value="Buscar" class="btn btn-search">
+</form>
+<span class="span-links">
+    <a href="{% url 'tareas_index' %}"> Ver todos</a>
+    <a href="{% url 'crear_tarea' %}"> Agregar tarea</a>
+</span>
+<ul class="lista">
+{% for f in form %}
+<li>
+    {{f}}
+    <span> 
+        <a href="{% url 'eliminar_tarea' id=f.id %}" class="btn btn_borrar"> BORRAR</a>
+        <a href="{% url 'editar_tarea' id=f.id %}" class="btn btn_editar"> EDITAR</a>
+        <a href="{% url 'detalle_tarea' id=f.id %}" class="btn btn_ver"> VER</a> 
+    </span>
+</li>
+{% endfor %} 
+</ul>
+{% endblock %}

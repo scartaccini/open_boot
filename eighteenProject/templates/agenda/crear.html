@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block 'titulo' %} CREAR/EDITAR CONTACTO {% endblock %}
+{% block 'contenido' %}
+<span class="span-links"><a href="{% url 'agenda_index' %}"> Volver</a>    </span>
+<form action="" method="POST">
+    {% csrf_token %}
+    <table>
+{{form.as_table}}
+
+</table>
+<input type="submit" value="GUARDAR"  class="btn btn-guardar">
+</form>
+
+{% endblock %}

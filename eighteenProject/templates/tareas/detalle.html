@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block 'titulo' %} TAREAS {% endblock %}
+{% block 'contenido' %}
+<span>DATOS : </span>
+<span class="span-links">
+<a href="{% url 'tareas_index' %}"> Volver</a>    
+</span>
+<ul class="lista">
+<li><b>TITULO: </b><b>{{form.titulo|upper}}</b></li>
+<li><b>FECHA DE INGRESO: </b><b>{{form.fecha}}</b></li>
+<li><b>FECHA ESTIMADA: </b><b>{{form.fecha_estimada}}</b></li>
+<li><b>PRIORIDAD (1 AL 5): </b><b>{{form.prioridad}}</b></li>
+<li><b>DESCRIPCIÓN: </b><b>{{form.descripcion|upper}}</b></li>
+</ul>
+{% endblock %}

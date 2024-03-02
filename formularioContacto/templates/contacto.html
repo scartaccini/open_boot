@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        {% if "valido" in request.GET %}
+    
+            <p style="color: rgb(23, 179, 31);">Información enviada correctamente, gracias</p>
+        
+        {% endif %}
+        
+        <form action="" method="POST" style="text-align: center;">
+            {% csrf_token %}
+            <table style="color: rgb(84, 70, 136); margin: 20px auto;">{{miFormulario.as_table}}</table>
+            <input type="submit" value="Enviar" style="width: 150px;">
+    
+        </form>
+       
+   
+</body>
+</html>
+

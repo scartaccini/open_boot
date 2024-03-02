@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    {% if list_question %}
+    <ul>
+    {% for q in list_question %}
+        <!-- es lo mismo <li><a href="/polls/{{ q.id }}/">{{ q.question_text }}</a></li>  -->
+        <li><a href="{% url 'detail' q.id %}">{{ q.question_text }}Ver respuestas</a></li>
+        <li><a href="{% url 'detail2' q.id %}">{{ q.question_text }}Ver votos</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+    
+</body>
+</html>
