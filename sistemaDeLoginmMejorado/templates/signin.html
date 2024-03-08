@@ -6,10 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/signup/" method="POST">
+    <form action="/signin/" method="POST">
         {% csrf_token %} 
         {{form.as_p}}
-        <div class="text-center"><button class="btn btn-primary">Signup</button></div>
+        <div class="text-center"><button class="btn btn-primary">Signin</button></div>
         </form>
 </body>
 </html>
