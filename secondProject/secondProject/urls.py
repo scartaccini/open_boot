@@ -23,4 +23,6 @@ urlpatterns = [
     path('dinamicaPlantilla/<str:nombre>/', views.dinamicaPlantilla, name="dinamicaPlantilla"),
     path('dinamicaPlantilla2/<str:nombre>/', views.dinamicaPlantilla2, name="dinamicaPlantilla2"),
     path('dinamicaPlantilla3/', views.dinamicaPlantilla3, name="dinamicaPlantilla3"),
+    path('comentarios/', views.comentarios, name="comentarios"),
+    path('forloop/', views.forloop, name="forloop"),
 ]
