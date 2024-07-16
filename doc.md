@@ -2,7 +2,7 @@
 -firstProject: url con y sin parametros, vistas usando funciones
 -secondProject: templates, contexto, comentarios, acciones para listas,variables en html(with)
 -thirdProject: Archivos estaticos(css,imagenes,js)
--fourthProject: Herencia en plantillas, include, enlace
+-fourthProject: Herencia en plantillas, include, enlace, variables with usando include(de un html a otro)
 -fiftyProject: Modularizacion(aplicaciones-> django-admin startapp comentarios), modelos,
  manejo de url por aplicacion(crear dentro de la aplicacion urls.py)
 -sixtyProject: crear y eliminar en bd
