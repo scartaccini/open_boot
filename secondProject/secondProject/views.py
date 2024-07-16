@@ -5,6 +5,9 @@ from django.http import HttpResponse
 def simplePlantilla(request):
     return render(request,"simplePlantilla.html",{})
 
+def variableWith(request):
+    return render(request,"variables_with.html",{})
+
 def comentarios(request):
     categorias=["Mozo","Cajero","Cheff"]
     context={"categorias":categorias}

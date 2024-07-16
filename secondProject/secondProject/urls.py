@@ -25,4 +25,5 @@ urlpatterns = [
     path('dinamicaPlantilla3/', views.dinamicaPlantilla3, name="dinamicaPlantilla3"),
     path('comentarios/', views.comentarios, name="comentarios"),
     path('forloop/', views.forloop, name="forloop"),
+    path('variable/', views.variableWith, name="variable"),
 ]
