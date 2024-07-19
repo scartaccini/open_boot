@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block contenido %}
+<div class="row row-cols-1 row-cols-md-3 g-4">
+
+{% for g in lista_grafitis %}  
+
+    <div class="col" style="width: 18rem;">
+        <div class="card-body"> 
+  
+<img src="{{g.imagen.url}}" width="300" height="300" class="card-img-top" alt="...">        
+{{g}}  
+
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    
+
+<a href="{% url 'edita_grafiti' g.id %}" class="btn btn-primary">EDITAR</a>
+<a href="{% url 'elimina_grafiti' g.id %}"class="btn btn-primary">ELIMINAR</a> 
+</div>
+</div>
+
+
+{% endfor %}    
+
+</div>
+{% endblock %}
+
+    
+   

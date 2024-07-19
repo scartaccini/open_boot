@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block contenido %}
+<div class="position-absolute top-50 start-50 translate-middle">
+<form method="GET">
+<input type="text" name="search" class="search-bar" placeholder="Buscar grafiti ...">
+<button type="submit" class="btn btn-primary">Aceptar</button>
+<a href="{% url 'index' %}" class="btn btn-primary ml-2">Volver</a>
+</form>
+    
+{% if form %}
+{% for f in form %}  
+<div class="lista_grafitis">
+<img src="{{f.imagen.url}}" width="300" height="300" class="figure-img img-fluid rounded">        
+{{f}}  
+<a class="btn btn-primary" href="{% url 'edita_grafiti' f.id %}">Editar<span class="glyphicon glyphicon-pencil"></span></a>
+<a class="btn btn-primary" href="{% url 'elimina_grafiti' f.id %}">Eliminar<span class="glyphicon glyphicon-erase"></span></a>      
+</div>
+{% endfor %}    
+{% endif %}
+</div>
+{% endblock %}
+        

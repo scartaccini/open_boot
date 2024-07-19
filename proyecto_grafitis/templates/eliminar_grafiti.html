@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block contenido %}
+<div class="position-absolute top-50 start-50 translate-middle">
+{% if usu  == user.username %}
+<h1>Vas a eliminar el grafiti {{nombre}} ?</h1>
+<form method="POST">
+{% csrf_token %}          
+<button type="submit" class="btn btn-primary">Eliminar</button>        
+<a href="{% url 'index' %}" class="btn btn-primary ml-2">Cancelar</a>
+</form>
+{% else %}
+<h1>No pódes eliminar el grafiti</h1>
+<a href="{% url 'index' %}" class="btn btn-primary ml-2">Volver</a>
+{% endif %}
+</div>
+{% endblock %}
+
+       
+        
+    

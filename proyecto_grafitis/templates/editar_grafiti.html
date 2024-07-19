@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block contenido %}
+<div class="position-absolute top-50 start-50 translate-middle">
+<h1>GRAFITI creado por: {{usu}}</h1>    
+<!-- enctype="multipart/form-data" y {{ form.media }} , porque hay un campo maneja imagen-->
+<!-- si el autor y el usuario logeado son los mismo-->
+{% if usu  == user.username %}
+<form method="POST" class="post" enctype="multipart/form-data">
+{% csrf_token %}
+<h1>Datos: </h1>
+{{form.as_p}}      
+<button type="submit" class="btn btn-primary">Aceptar</button>
+<a href="{% url 'index' %}" class="btn btn-primary ml-2">Volver</a>
+</form>
+{% else %}
+<h1>No pódes editar</h1>
+<a href="{% url 'index' %}" class="btn btn-primary ml-2">Volver</a>
+{% endif %}
+</div>
+{% endblock %}
+
+    
+
+
