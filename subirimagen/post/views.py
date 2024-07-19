@@ -9,7 +9,8 @@ def subir_img(request):
         form=PostForm(request.POST, request.FILES) 
         
         if form.is_valid():
-            
+            #form.save() 
+            #otra forma
             img = request.FILES['imagen']
         
             post = Post(title = request.POST['title'], text = request.POST['text'], imagen = img )
