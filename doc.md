@@ -39,8 +39,9 @@ python manage.py seed api --number=15
 -eighteenProject: Proyecto total: UNA AGENDA Y UN ADMINISTRADOR DE TAREA
 
 -subirimagen: guardar de archivos en BD (pip install Pillow)
--sistemaDeLogin-->sistemaDeLoginMejorado: sistema de login y control de acceso
--loginSubirImgCrud-->proyecto_grafitis: Combinacion de subirimagen y sistemaDeLogin
+-sistemaDeLogin-->sistemaDeLoginMejorado: Login y control de acceso
+-loginSubirimagen: Login y subir imagen (subirimagen - sistemaDeLoginMejorado)
+-loginSubirImgCrud-->proyecto_grafitis: Subir imagen, login y CRUD (subirimagen - sistemaDeLoginMejorado -proyecto_grafitis)
 -error 404: Maneja el error 404, no encuentra la url 
 la forma más fácil es crear en templates un archivo 404.html y en settings:
 DEBUG = False
