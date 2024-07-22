@@ -8,7 +8,16 @@
 <body>
     <form action="/signup/" method="POST">
         {% csrf_token %} 
-        {{form.as_p}}
+       {# {{form.as_p}} #}
+       <h3>REGISTER</h3>
+    <h5>{{form.username.label}}</h5>
+    {{form.username}}
+    <h5>{{form.email.label}}</h5>
+    {{form.email}}
+    <h5>{{form.password1.label}}</h5>
+    {{form.password1}}
+    <h5>{{form.password2.label}}</h5>
+    {{form.password2}}
         <div class="text-center"><button class="btn btn-primary">Signup</button></div>
         </form>
 </body>

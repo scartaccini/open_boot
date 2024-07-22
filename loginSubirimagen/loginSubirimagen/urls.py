@@ -17,6 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from sistemaLogin.views import signin, signout, signup 
+###para poder configurar manejo de multimedia, carpeta media
+from django.conf.urls.static import static
+###importo settings
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,3 +30,5 @@ urlpatterns = [
     path('logout/', signout, name='logout'),
     path('subirImagen/', include('subirImagen.urls'))
 ]
+###agreo a urlpatterns el setting de media
+urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login , authenticate , logout#login, crea una cookie (ssesionid)
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-
+from. forms import CustomUserForm
 
 def index(request):    
     return render(request, 'index.html')
@@ -15,7 +15,8 @@ def contenido(request):
 ##### LOGUEO, DESLOGUEO, CREACION DE USUARIO 
 def signup(request):
     if request.method == 'GET':
-        return render(request, 'signup.html', {"form": UserCreationForm})
+        #return render(request, 'signup.html', {"form": UserCreationForm})
+        return render(request, 'signup.html', {"form": CustomUserForm})
     else:
 
         if request.POST["password1"] == request.POST["password2"]:
@@ -26,9 +27,11 @@ def signup(request):
                 return redirect('index')
                 #return render(request, 'index.html')
             except:
-                return render(request, 'signup.html', {"form": UserCreationForm, "error": "Username already exists."})
+                #return render(request, 'signup.html', {"form": UserCreationForm, "error": "Username already exists."})
+                return render(request, 'signup.html', {"form": CustomUserForm, "error": "Username already exists."})
 
-        return render(request, 'signup.html', {"form": UserCreationForm, "error": "Passwords did not match."})
+        #return render(request, 'signup.html', {"form": UserCreationForm, "error": "Passwords did not match."})
+        return render(request, 'signup.html', {"form": CustomUserForm, "error": "Passwords did not match."})
     
     
 def signin(request):
