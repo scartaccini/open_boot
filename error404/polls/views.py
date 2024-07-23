@@ -8,7 +8,7 @@ def index(request):
 
 def detail(request, question_id):
     try:
-        question = Question.objects.get(pk=question_id)
+        pregunta = Question.objects.get(pk=question_id)
     except Question.DoesNotExist:
         raise Http404("Question does not exist")
-    return render(request, "polls/detail.html", {"question": question})
+    return render(request, "polls/detail.html", {"pregunta": pregunta})
