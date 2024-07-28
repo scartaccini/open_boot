@@ -4,8 +4,12 @@ from .models import Author
 
 def autores(request):
     authors=Author.objects.all()
+    #authors=Author.objects.all().values() permite volver cada objeto como diccionario
+    #authors=Author.objects.all().values_list() permite volver cada objeto como tupla
+    #authors=Author.objects.all().values_list('email') ppermite volver sólo las columnas especificas
     #autordenados=Author.objects.all().order_by("email")
     #id_menores_de_5=Author.objects.filter(id__lt=5) #__gt,__lte,__gte,__contains,__exact,__inexact
+    #Author.objects.filter(name='pablo') | Author.objects.filter(name='lucas') filtra por balo o lucas
     #Author.objects.filter(email__contains="@example.com")
     return render(request, "posts/autores.html",{"authors":authors})
 
