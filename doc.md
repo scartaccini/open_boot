@@ -13,6 +13,11 @@ pip install psycopg2-binary
 python manage.py seed api --number=15
 -eightyProject: relaciones 1 a 1, relaciones N a 1 y N a N
 -ninetyProject: configuracion para postgresql usando variables de entorno
+es importante que el .env, sobre todo en produccion, no este al alcance. 
+En produccion no deberia estar en la carpeta raiz, ejemplo:
+-httpdocs
+    -index.html
+- .env
 -tenProject: Proyecto : todas las relaciones son: muchos a uno, CRUD sin usar fomularios
 ###############
 # 1 Employee -> 1 Job       1 Job -> 1 Salary

@@ -11,6 +11,18 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv, dotenv_values
+#pip install psycopg2-binary
+#pip install python-dotenv
+#tener instalado el motor de base de datos PostgreSQL
+#crear la BD
+import os
+load_dotenv()
+
+clave = os.environ.get("PASSWORD")
+servidor = os.environ.get("HOST")
+bd = os.environ.get("NAME")
+usuario = os.environ.get("USER")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -78,13 +90,13 @@ DATABASES = {
 
         'ENGINE': 'django.db.backends.postgresql',
 
-        'NAME': 'django_postgres',
+        'NAME': bd,
 
-        'USER': 'postgres',
+        'USER': usuario,
 
-        'PASSWORD': 'A43222a43222',
+        'PASSWORD': clave,
 
-        'HOST': '127.0.0.1',
+        'HOST': servidor,
 
         'PORT': '5432',
 
