@@ -7,10 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    
-    {% if list_question %}
+    <!-- #list_question -->
+    {% if object_list %} 
     <ul>
-    {% for q in list_question %}
+    {% for q in object_list %}
         <!-- es lo mismo <li><a href="/polls/{{ q.id }}/">{{ q.question_text }}</a></li>  -->
         <li><a href="{% url 'detail' q.id %}">{{ q.question_text }}Ver respuestas</a></li>
         <li><a href="{% url 'detail2' q.id %}">{{ q.question_text }}Ver votos</a></li>
