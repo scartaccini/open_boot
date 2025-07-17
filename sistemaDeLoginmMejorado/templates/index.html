@@ -7,5 +7,10 @@
 </head>
 <body>
     <h1>INDEX</h1>
+    {% if user.is_authenticated %} 
+    {{user}}
+    {% else %}
+    <p>Usuario sin louearse!</p>
+    {% endif %}
 </body>
 </html>
