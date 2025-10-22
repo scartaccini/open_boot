@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from .models import Author
+from .models import Author, Entry
 
 def autores(request):
     authors=Author.objects.all()
@@ -27,3 +27,31 @@ def actualizacion(request):
     autor.email="pepe@gmail.com"
     autor.save()
     return HttpResponse("Autor modificado correctamente!")
+
+def eliminar_autor(request):
+    autor=Author.objects.get(id=14)
+    autor.delete()
+    return HttpResponse("Se elimino autor correctamente!")
+
+def actualizacion_entry(request):
+    entrada=Entry.objects.get(id=10)
+    entrada.author=Author.objects.get(id=2)
+    entrada.headline="historia d l manya"
+    entrada.body_text="nace en 18912, seras eterno como el tiempo y floreceras en cada primavera"
+    entrada.rating = 3
+    entrada.save()
+    return HttpResponse("Entrada modificada correctamente!")
+
+def mostrar_entradas(request):
+    entradas=Entry.objects.all()
+    return render(request, "posts/entradas.html",{"entradas":entradas})
+
+def crear_entrada(request):
+    entrada=Entry(author=Author.objects.get(id=3),headline="Prueba!!",body_text="esto es un comentario positivo", rating=2)
+    entrada.save()
+    return HttpResponse("Se creo entrada correctamente!")
+
+def eliminarEntrada(request):
+    entrada=Entry.objects.get(id=1)
+    entrada.delete()
+    return HttpResponse("Se elimino entrada correctamente!")

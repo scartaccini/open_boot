@@ -9,10 +9,10 @@
 -seventyProject: clave foranea, update, read en la bd,uso de filtros, utilizacion de un fake(para poblar la bd de forma rapida)
 pip install django-seed
 registrar en settings django_seed
-pip install psycopg2-binary
 python manage.py seed api --number=15
 -eightyProject: relaciones 1 a 1, relaciones N a 1 y N a N
 -ninetyProject: configuracion para postgresql usando variables de entorno
+pip install psycopg2-binary
 es importante que el .env, sobre todo en produccion, no este al alcance. 
 En produccion no deberia estar en la carpeta raiz, ejemplo:
 -httpdocs
