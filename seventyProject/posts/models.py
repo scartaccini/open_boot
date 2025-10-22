@@ -18,6 +18,9 @@ class Entry(models.Model):
     def __str__(self):
         return self.headline
 
+# 1 ENTRY ----- 1 AUTHOR
+# 1 AUTHOR ------ 1 o * ENTRY
+
 #cada vez que se cambie models.py
 # python manage.py makemigrations
 # python manage.py migrate
