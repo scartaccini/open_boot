@@ -22,5 +22,6 @@ urlpatterns = [
     path('saludo/', views.saludo, name="saludo"),
     path('adios/', views.adios, name="adios"),
     path('adulto/<int:edad>/', views.adulto, name="adulto"),
+    path('adulto/', views.adulto, name="adulto_sin_pasar_valor"),
     path('datos/<int:edad>/<str:nombre>/', views.datos, name="datos"),
 ]

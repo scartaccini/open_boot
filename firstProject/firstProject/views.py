@@ -7,7 +7,7 @@ def saludo(request):
 def adios(request):
     return HttpResponse("Chau")
 
-def adulto(request,edad):
+def adulto(request,edad=0):
     if edad >= 18:
         return HttpResponse("<h1>Eres mayor</h1>")
     else:
