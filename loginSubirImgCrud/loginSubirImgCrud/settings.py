@@ -127,7 +127,7 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = reverse_lazy('inicio') # cuando nos logeamos nos manda a views.inicio
-#LOGOUT_REDIRECT_URL = reverse_lazy('inicio') # cuando nos deslogeamos nos manda a views.inicio
+LOGOUT_REDIRECT_URL = reverse_lazy('inicio') # cuando nos deslogeamos nos manda a views.inicio
 
 ##para poder manejar archivos multimedia
 MEDIA_URL = '/media/'
